@@ -1,0 +1,26 @@
+---
+// data source
+// replace temporary JSON placeholder API
+const source = 'https://jsonplaceholder.typicode.com/users';
+// fetch the data
+const res = await fetch(source); 
+// store retreived data
+const data = await res.json();
+---
+
+
+<ul class="cards">
+
+{
+    data.map( item =>
+    <li class="card-item">
+        
+        <img src="https://assets.codepen.io/16425/image-placeholder.png" />
+        <h3>{item.name}</h3>
+        <p>{item.company.catchPhrase}</p>
+        
+    </li> 
+    )
+}
+
+</ul>
